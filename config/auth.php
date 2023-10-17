@@ -49,7 +49,7 @@ return [
 
         'owners' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'owners',
         ],
         'admin' => [
             'driver' => 'session',
@@ -77,22 +77,18 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\driver::class,
+            'model' => App\Models\User::class,
         ],
 
         'owners' => [
             'driver' => 'eloquent',
-            'model' => App\Models\owners::class,
+            'model' => App\Models\Owner::class,
         ],
 
         'admin' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\Admin::class,
         ],
-
-
-
-                                    
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

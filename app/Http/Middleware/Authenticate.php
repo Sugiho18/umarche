@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\Owner;
 use App\Models\Admin;
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 use Illuminate\Support\Facades\Route;
