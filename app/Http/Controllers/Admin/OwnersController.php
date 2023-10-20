@@ -138,16 +138,17 @@ class OwnersController extends Controller
         ->with(['message'=>'オーナー登録を削除しました',
         'status' => 'alert']);
     }
-
+    //ソフトデリートしたデータだけを取得する処理
     public function expiredOwnerIndex(){ 
         $expiredOwners = Owner::onlyTrashed()->get(); 
         return view('admin.expired-owners', 
        compact('expiredOwners')); 
-    } 
-       public function expiredOwnerDestroy($id){ 
+    }
+    //ソフトデリートしたデータをIDを参照に取得し完全に削除する処理
+    public function expiredOwnerDestroy($id){ 
         Owner::onlyTrashed()->findOrFail($id)->forceDelete(); 
         return redirect()->route('admin.expired-owners.index'); 
-       }
+    }
 
 
 }
