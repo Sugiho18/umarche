@@ -48,8 +48,8 @@
                                 </tr>
                                 @endforeach
                               </tbody>
-                            {{ $owners->links() }}
                             </table>
+                            {{ $owners->links() }}
                           </div>
                             </a>
                           </div>
