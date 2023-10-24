@@ -41,6 +41,7 @@ class Owner extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    //外部キー向けにidを取得
     public function shop()
     {
         return $this->hasOne(Shop::class);
