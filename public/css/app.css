@@ -771,6 +771,9 @@ select{
 .-m-2{
   margin: -0.5rem;
 }
+.m-3{
+  margin: 0.75rem;
+}
 .m-8{
   margin: 2rem;
 }
@@ -1831,3 +1834,4 @@ select{
     padding-right: 2rem;
   }
 }
+
