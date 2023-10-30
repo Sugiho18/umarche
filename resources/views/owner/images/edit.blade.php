@@ -40,7 +40,7 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+
 
 <script> 
     function deletePost(e) { 
@@ -50,3 +50,4 @@
     } 
     } 
 </script>
+</x-app-layout>
