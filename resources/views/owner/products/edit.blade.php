@@ -9,9 +9,11 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
+                    <x-flash-message status="session('status')"/>
                     <x-auth-validation-errors class="mb-4" :errors="$errors" />
                     <form method="post" action="{{ route('owner.products.update',['product'=>$product->id])}}" >
                         @csrf
+                        @method('put')
                         <div class="-m-2">
                             <div class="p-2 w-1/2 mx-auto ">
                                 <div class="relative">
@@ -48,13 +50,10 @@
                                 <div class="relative">
                                     <label for="name" class="leading-7 text-sm text-gray-600">取扱店舗</label>
                                     <select name="shop_id" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                                    @foreach($categories as $category)
-                                    @foreach($category->secondary as $secondary) 
-                                    <option value="{{$product->id}}" @if($secondary->id === $product->secondary_category_id) selected @endif>
-                                        {{ $product->name }} 
-                                    </option>
-                                    @endforeach
-                                    @endforeach
+                                        @foreach($shops as $shop)
+                                            <option value="{{$shop->id}}">
+                                            {{ $shop->name }} 
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
