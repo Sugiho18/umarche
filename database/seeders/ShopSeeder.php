@@ -19,21 +19,21 @@ class ShopSeeder extends Seeder
                 'owner_id'=>1,
                 'name'=>'ここに店名',
                 'information'=>'ここに店舗の説明ここに店舗の説明ここに店舗の説明ここに店舗の説明',
-                'filename'=>'',
+                'filename'=>'sample1.jpg',
                 'is_selling'=>true
             ],
             [
                 'owner'=>2,
                 'name'=>'ここに店名',
                 'information'=>'ここに店舗の説明ここに店舗の説明ここに店舗の説明ここに店舗の説明',
-                'filename'=>'',
+                'filename'=>'sample2.jpg',
                 'is_selling'=>true
             ],
             [
                 'owner'=>3,
                 'name'=>'ここに店名',
                 'information'=>'ここに店舗の説明ここに店舗の説明ここに店舗の説明ここに店舗の説明',
-                'filename'=>'',
+                'filename'=>'sample3.jpg',
                 'is_selling'=>true
             ],
         ]);
