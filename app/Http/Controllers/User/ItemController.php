@@ -9,6 +9,9 @@ use App\Models\Stock;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\PrimaryCategory;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TestMail;
+use App\Jobs\SendThanksMail;
 
 class ItemController extends Controller
 {
@@ -34,6 +37,12 @@ class ItemController extends Controller
         ->selectCategory($request->category ?? '0')
         ->sortOrder($request->sort)
         ->paginate($request->pagination ?? '20');
+        
+        // 同期的な送信
+        // Mail::to('test@example.com')->send(new TestMail());
+        
+        // 非同期な送信
+        SendThanksMail::dispatch();
 
         $categories = PrimaryCategory::with('secondary')
         ->get(); 
