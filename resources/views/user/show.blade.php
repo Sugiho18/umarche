@@ -64,10 +64,10 @@
                         <h2 class="mb-4 text-sm title-font text-gray-500 tracking-widest">{{ $product->category->name }}</h2>
                         <h1 class="mb-4 text-gray-900 text-3xl title-font font-medium ">{{ $product->name }}</h1>
                         <p class="mb-5 leading-relaxed">{{ $product->information }}</p>
+                        <form method="post" action="{{ route('user.cart.add')}}"> 
+                            @csrf
                         <div class="flex justify-around items-center">
-                            <p class="title-font font-medium text-2xl text-gray-900">{{ number_format($product->price) }}<span class="text-sm text-gray-700">円(税込)</span></p>
-                            <form method="post" action="{{ route('user.cart.add')}}"> 
-                                @csrf
+                            <p name='price' class="title-font font-medium text-2xl text-gray-900">{{ number_format($product->price) }}<span class="text-sm text-gray-700">円(税込)</span></p>
                             <div class="flex items-center">
                             <span class="mr-3">個数</span>
                             <div class="relative">
