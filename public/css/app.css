@@ -850,6 +850,9 @@ select{
 .mr-3{
   margin-right: 0.75rem;
 }
+.mr-4{
+  margin-right: 1rem;
+}
 .mr-8{
   margin-right: 2rem;
 }
@@ -1053,6 +1056,11 @@ select{
 }
 .justify-around{
   justify-content: space-around;
+}
+.space-x-2 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
 .space-x-8 > :not([hidden]) ~ :not([hidden]){
   --tw-space-x-reverse: 0;
@@ -1886,11 +1894,23 @@ select{
   }
 }
 @media (min-width: 1024px){
+  .lg\:mb-0{
+    margin-bottom: 0px;
+  }
+  .lg\:mr-2{
+    margin-right: 0.5rem;
+  }
+  .lg\:flex{
+    display: flex;
+  }
   .lg\:w-1\/2{
     width: 50%;
   }
   .lg\:w-2\/3{
     width: 66.666667%;
+  }
+  .lg\:justify-around{
+    justify-content: space-around;
   }
   .lg\:px-8{
     padding-left: 2rem;
